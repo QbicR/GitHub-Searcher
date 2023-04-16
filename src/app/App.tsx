@@ -1,21 +1,14 @@
-import { Suspense, useEffect } from 'react'
+import { Suspense } from 'react'
+
 import './styles/index.css'
 import { AppRouter } from './providers/RouterProvider'
-import { MainPage } from 'pages/MainPage'
+import { FallbackWidget } from 'widgets/FallbackWidget'
 
 const App = () => {
-    useEffect(() => {
-        if (Math.random() < 0.5) {
-            throw new Error('error')
-        }
-    }, [])
-
     return (
-        <div>
-            <Suspense fallback="">
-                <AppRouter />
-            </Suspense>
-        </div>
+        <Suspense fallback={<FallbackWidget />}>
+            <AppRouter />
+        </Suspense>
     )
 }
 

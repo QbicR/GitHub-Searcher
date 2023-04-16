@@ -1,4 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        background: rgb(55 65 81 /1);
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background: rgb(209 213 219/1);
+    }
+
+    input {
+        outline: none;
+    }
+}
 
 * {
     margin: 0;

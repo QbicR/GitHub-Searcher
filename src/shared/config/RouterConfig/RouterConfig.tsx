@@ -26,11 +26,11 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         element: <MainPage />,
     },
     [AppRoutes.REPOS]: {
-        path: RoutePath.repos,
+        path: `:user${RoutePath.repos}`,
         element: <ReposPage />,
     },
     [AppRoutes.COMMITS]: {
-        path: `${RoutePath.commits}:id`,
+        path: `:user${RoutePath.commits}:id/commits`,
         element: <CommitsPage />,
     },
     [AppRoutes.NOT_FOUND]: {
