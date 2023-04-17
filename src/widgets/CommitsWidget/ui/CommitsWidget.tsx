@@ -15,7 +15,7 @@ export const CommitsWidget = () => {
 
     useEffect(() => {
         dispatch(getCommitesData({ login: user, reposName: repos_name }))
-    }, [])
+    }, [dispatch, repos_name, user])
 
     let content
     if (loading) {
@@ -27,7 +27,7 @@ export const CommitsWidget = () => {
     } else if (error) {
         content = (
             <div className="flex items-center justify-center flex-col w-full max-w-6xl h-4/5 p-8 gap-8  border rounded-lg shadow bg-gray-800 border-gray-700">
-                <div className="text-3xl font-medium text-gray-200">{error}</div>
+                <div className="text-3xl text-center font-medium text-gray-200">{error}</div>
             </div>
         )
     } else {

@@ -1,24 +1,29 @@
-import { useState } from 'react'
+import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { getUserInfo } from '../../model/services/getUserInfo'
 import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { getReposData } from 'features/GetRepos'
+import { useSelector } from 'react-redux'
+import { getUserState } from '../../model/selectors/getUserState'
+import { userAction } from 'entities/Search/model/slice/userSlice'
 
 export const Search = () => {
-    const [searchValue, setSearchValue] = useState<string>('')
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
+    const { searchValue } = useSelector(getUserState)
 
-    const search = () => {
-        if (searchValue.trim() !== '') {
-            localStorage.setItem('user', searchValue)
+    const search = useCallback(() => {
+        if (!searchValue) {
             dispatch(getUserInfo({ login: searchValue }))
             dispatch(getReposData({ login: searchValue }))
             navigate(`../${searchValue}${RoutePath.repos}`)
         }
-        setSearchValue('')
+    }, [dispatch, navigate, searchValue])
+
+    const changeSearchValue = (value: string) => {
+        dispatch(userAction.setSearchValue(value))
     }
 
     return (
@@ -40,7 +45,7 @@ export const Search = () => {
                     </svg>
                 </div>
                 <input
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={(e) => changeSearchValue(e.target.value)}
                     value={searchValue}
                     type="text"
                     className="text-lg rounded-lg w-full pl-16 p-3 border-2 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-300 focus:border-blue-600"

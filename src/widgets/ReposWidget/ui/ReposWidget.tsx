@@ -1,29 +1,25 @@
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
-import { getUserInfo, getUserState } from 'entities/Search'
+import { getUserState } from 'entities/Search'
 import { UserInfo } from 'entities/UserInfo'
-import { ReposTable, getReposData, getReposState } from 'features/GetRepos'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
+import { ReposTable, getReposState } from 'features/GetRepos'
 import { Loader } from 'shared/ui/Loader/Loader'
+import { useNavigate } from 'react-router-dom'
+import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
 
-export const ReposWidget = () => {
+export const ReposWidget = memo(() => {
     const userData = useSelector(getUserState)
     const reposData = useSelector(getReposState)
-    const dispatch = useAppDispatch()
     const navigate = useNavigate()
-    const { login, avatar_url, error: userError } = userData
+    const { login, avatar_url, error: userError, searchValue } = userData
     const { repositoties, loading: reposLodaing } = reposData
 
-    const user = localStorage.getItem('user')
-
     useEffect(() => {
-        dispatch(getUserInfo({ login: user }))
-        dispatch(getReposData({ login: user }))
-        navigate(`../${user}${RoutePath.repos}`)
-    }, [dispatch, navigate, user])
+        if (searchValue.length === 0) {
+            navigate(RoutePath.main)
+        }
+    }, [searchValue, navigate])
 
     let content
     if (reposLodaing) {
@@ -34,8 +30,8 @@ export const ReposWidget = () => {
         )
     } else if (userError) {
         content = (
-            <div className="flex items-center justify-center flex-col w-full max-w-6xl h-4/5 p-8 gap-8  border rounded-lg shadow bg-gray-800 border-gray-700">
-                <div className="text-3xl font-medium text-gray-200">{userError}</div>
+            <div className="flex items-center justify-center flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
+                <div className="text-3xl text-center font-medium text-gray-200">{userError}</div>
             </div>
         )
     } else {
@@ -48,4 +44,4 @@ export const ReposWidget = () => {
     }
 
     return <>{content}</>
-}
+})

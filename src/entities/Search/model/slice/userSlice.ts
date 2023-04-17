@@ -1,8 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { UserType } from '../types/userTypes'
 import { getUserInfo } from '../services/getUserInfo'
 
 const initialState: UserType = {
+    searchValue: '',
     id: null,
     login: '',
     avatar_url: '',
@@ -13,7 +14,11 @@ const initialState: UserType = {
 export const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {},
+    reducers: {
+        setSearchValue: (state, action: PayloadAction<string>) => {
+            state.searchValue = action.payload
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(getUserInfo.pending, (state) => {
             state.loading = true
