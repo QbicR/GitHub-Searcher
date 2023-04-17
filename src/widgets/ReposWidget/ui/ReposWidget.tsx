@@ -1,25 +1,16 @@
-import { memo, useEffect } from 'react'
+import { memo } from 'react'
 import { useSelector } from 'react-redux'
 
 import { getUserState } from 'entities/Search'
 import { UserInfo } from 'entities/UserInfo'
 import { ReposTable, getReposState } from 'features/GetRepos'
 import { Loader } from 'shared/ui/Loader/Loader'
-import { useNavigate } from 'react-router-dom'
-import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
 
 export const ReposWidget = memo(() => {
     const userData = useSelector(getUserState)
     const reposData = useSelector(getReposState)
-    const navigate = useNavigate()
-    const { login, avatar_url, error: userError, searchValue } = userData
+    const { login, avatar_url, error: userError } = userData
     const { repositoties, loading: reposLodaing } = reposData
-
-    useEffect(() => {
-        if (searchValue.length === 0) {
-            navigate(RoutePath.main, { replace: true })
-        }
-    }, [])
 
     let content
     if (reposLodaing) {

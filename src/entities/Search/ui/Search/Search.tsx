@@ -1,12 +1,11 @@
-import { useCallback } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import { getUserInfo } from '../../model/services/getUserInfo'
+import { getUserState } from '../../model/selectors/getUserState'
 import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { getReposData } from 'features/GetRepos'
-import { useSelector } from 'react-redux'
-import { getUserState } from '../../model/selectors/getUserState'
 import { userAction } from 'entities/Search/model/slice/userSlice'
 
 export const Search = () => {
