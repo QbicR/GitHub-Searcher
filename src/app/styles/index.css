@@ -4,19 +4,19 @@
 @tailwind utilities;
 
 @layer utilities {
-    .scrollbar::-webkit-scrollbar {
+    .scrollbar-x::-webkit-scrollbar {
         width: 8px;
     }
 
-    .scrollbar::-webkit-scrollbar-track {
-        border-bottom-right-radius: 5px;
-        border-top-right-radius: 5px;
+    .scrollbar-x::-webkit-scrollbar-track {
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
         background: rgb(55 65 81 /1);
     }
 
-    .scrollbar::-webkit-scrollbar-thumb {
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+    .scrollbar-x::-webkit-scrollbar-thumb {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
         background: rgb(209 213 219/1);
     }
 

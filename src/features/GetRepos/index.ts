@@ -1,1 +1,5 @@
+export { getReposState } from './model/selectors/getReposState'
+export { getReposData } from './model/services/getReposData'
+export { reposAction, reposReducer } from './model/slice/reposSlice'
+export type { RepositoriesType } from './model/types/repositoryType'
 export { ReposTable } from './ui/ReposTable/ReposTable'

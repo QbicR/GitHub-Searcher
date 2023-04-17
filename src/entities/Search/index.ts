@@ -1,1 +1,5 @@
 export { Search } from './ui/Search/Search'
+export { userReducer, userAction } from './model/slice/userSlice'
+export { getUserState } from './model/selectors/getUserState'
+export { getUserInfo } from './model/services/getUserInfo'
+export type { UserType } from './model/types/userTypes'
