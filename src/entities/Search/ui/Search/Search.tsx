@@ -14,13 +14,13 @@ export const Search = () => {
     const navigate = useNavigate()
     const { searchValue } = useSelector(getUserState)
 
-    const search = useCallback(() => {
-        if (!searchValue) {
+    const search = () => {
+        if (searchValue.trim() !== '') {
             dispatch(getUserInfo({ login: searchValue }))
             dispatch(getReposData({ login: searchValue }))
-            navigate(`../${searchValue}${RoutePath.repos}`)
+            navigate(`../${searchValue}${RoutePath.repos}`, { replace: true })
         }
-    }, [dispatch, navigate, searchValue])
+    }
 
     const changeSearchValue = (value: string) => {
         dispatch(userAction.setSearchValue(value))
@@ -53,8 +53,9 @@ export const Search = () => {
                 />
             </div>
             <button
+                disabled={searchValue.trim() === ''}
                 onClick={search}
-                className="py-3 px-8 ml-4 text-lg border-2 text-gray-200 rounded-lg border-blue-600 bg-blue-600 hover:bg-blue-700 focus:bg-blue-800"
+                className="py-3 px-8 ml-4 text-lg border-2 text-gray-200 rounded-lg border-blue-600 bg-blue-600 hover:bg-blue-700 focus:bg-blue-800 disabled:bg-blue-500 disabled:cursor-not-allowed"
             >
                 Найти
             </button>

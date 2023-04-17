@@ -15,7 +15,7 @@ export const CommitsWidget = () => {
 
     useEffect(() => {
         dispatch(getCommitesData({ login: user, reposName: repos_name }))
-    }, [dispatch, repos_name, user])
+    }, [])
 
     let content
     if (loading) {

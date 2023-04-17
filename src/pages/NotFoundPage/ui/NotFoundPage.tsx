@@ -15,7 +15,7 @@ const NotFoundPage = () => {
                     Попробуйте проверить ссылку или вернитесь на главную страницу.
                 </h3>
                 <button
-                    onClick={() => navigate(RoutePath.main)}
+                    onClick={() => navigate(RoutePath.main, { replace: true })}
                     className="py-3 px-8 ml-4 text-lg border-2 text-gray-200 rounded-lg border-blue-600 bg-blue-600 hover:bg-blue-700 focus:bg-blue-800"
                 >
                     На главную

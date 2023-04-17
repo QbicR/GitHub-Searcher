@@ -17,9 +17,9 @@ export const ReposWidget = memo(() => {
 
     useEffect(() => {
         if (searchValue.length === 0) {
-            navigate(RoutePath.main)
+            navigate(RoutePath.main, { replace: true })
         }
-    }, [searchValue, navigate])
+    }, [])
 
     let content
     if (reposLodaing) {
