@@ -1,9 +1,14 @@
 Простой интерфейс к сервису github.com, который позволяет находить пользователей по логину, отображать их репозитории, а так же просматривать коммиты в репозиториях пользователя.
 
-Стек: React, TypeScript, Redux Toolkit, TailwindCSS, Storybook.
+Стек: React, TypeScript, Redux Toolkit, TailwindCSS, Storybook, FSD.
+В разработке применялась методолигия FSD.
+В приложение есть Storybook и тесты на селекторы и слайсы редакса.
 
 Запуск приложения:
 1. npm i
 2. npm run start
 
-Компоненты приложения можно посмотреть в Storybook. Для запуска Storybook'a необходимо ввести команду: npm run storybook, после чего перейти по адресу: http://localhost:6006/
+Компоненты приложения можно посмотреть в Storybook. Для запуска Storybook'a необходимо ввести команду: 
+npm run storybook, 
+после чего перейти по адресу: 
+http://localhost:6006/
