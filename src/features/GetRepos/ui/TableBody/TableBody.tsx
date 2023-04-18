@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { RepositoryType } from '../../model/types/repositoryType'
+import { reposAction } from '../../model/slice/reposSlice'
 import { getCommitesData } from 'features/GetCommits'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
@@ -17,6 +18,7 @@ export const TableBody: React.FC<Props> = memo((props) => {
     const navigate = useNavigate()
 
     const handleGetCommitesData = (name: string) => {
+        dispatch(reposAction.setReposName(name))
         dispatch(getCommitesData({ login, reposName: name }))
         navigate(`../${login}${RoutePath.commits}${name}/commits`)
     }

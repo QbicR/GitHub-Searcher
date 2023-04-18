@@ -13,10 +13,10 @@ const data: UserType = {
 
 describe('userSlice.test', () => {
     test('test set search value', () => {
-        const state: DeepPartial<UserType> = { searchValue: '' }
-        expect(userReducer(state as UserType, userAction.setSearchValue('Qbic'))).toEqual({
-            searchValue: 'Qbic',
-        })
+        const action = userAction.setSearchValue('Qbic')
+        const state = { ...data, searchValue: '' }
+        const expectedState = { ...data, searchValue: 'Qbic' }
+        expect(userReducer(state, action)).toEqual(expectedState)
     })
 
     test('test get user info pending', () => {

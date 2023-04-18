@@ -45,6 +45,9 @@ WithValues.decorators = [
         commitesData: {
             commites: commites,
         },
+        reposData: {
+            reposName: 'Reposity №1',
+        },
     }),
 ]
 
@@ -58,6 +61,9 @@ WithCommitesLoading.decorators = [
         commitesData: {
             loading: true,
         },
+        reposData: {
+            reposName: 'Reposity №1',
+        },
     }),
 ]
 
@@ -70,6 +76,9 @@ WithCommitesError.decorators = [
         },
         commitesData: {
             error: 'Коммиты не найдены. Репозиторий пуст.',
+        },
+        reposData: {
+            reposName: 'Reposity №1',
         },
     }),
 ]

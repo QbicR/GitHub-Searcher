@@ -1,4 +1,4 @@
-import { reposReducer } from './reposSlice'
+import { reposAction, reposReducer } from './reposSlice'
 import { getReposData } from '../services/getReposData'
 import { RepositoriesType } from '../types/repositoryType'
 
@@ -35,21 +35,34 @@ const data: RepositoriesType = {
             stargazers_count: 15,
         },
     ],
+    reposName: '',
     loading: true,
     error: '',
 }
 
 describe('reposSlice.test', () => {
+    test('test set repository name', () => {
+        const action = reposAction.setReposName('Repository №1')
+        const state = { ...data, reposName: '' }
+        const expectedState = { ...data, reposName: 'Repository №1' }
+        expect(reposReducer(state, action)).toEqual(expectedState)
+    })
+
     test('test get repos data pending', () => {
         const action = { type: getReposData.pending.type }
         const state = reposReducer(data, action)
-        expect(state).toEqual({ loading: true, error: '', repositories: [] })
+        expect(state).toEqual({ loading: true, error: '', reposName: '', repositories: [] })
     })
 
     test('test get repos data fullfiled', () => {
         const action = { type: getReposData.fulfilled.type, payload: data.repositories }
         const state = reposReducer(data, action)
-        expect(state).toEqual({ loading: false, error: '', repositories: [...action.payload] })
+        expect(state).toEqual({
+            loading: false,
+            error: '',
+            reposName: '',
+            repositories: [...action.payload],
+        })
     })
 
     test('test get repos data rejected', () => {
@@ -58,6 +71,7 @@ describe('reposSlice.test', () => {
         expect(state).toEqual({
             loading: false,
             error: action.payload,
+            reposName: '',
             repositories: [],
         })
     })

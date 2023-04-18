@@ -5,6 +5,7 @@ import { getReposData } from '../services/getReposData'
 
 const initialState: RepositoriesType = {
     repositories: [],
+    reposName: '',
     loading: false,
     error: '',
 }
@@ -12,7 +13,11 @@ const initialState: RepositoriesType = {
 export const reposSlice = createSlice({
     name: 'repos',
     initialState,
-    reducers: {},
+    reducers: {
+        setReposName: (state, action) => {
+            state.reposName = action.payload
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(getReposData.pending, (state) => {
             state.loading = true

@@ -31,6 +31,9 @@ Normal.decorators = [
         commitesData: {
             commites: commites,
         },
+        reposData: {
+            reposName: 'Reposity №1',
+        },
     }),
 ]
 
@@ -40,6 +43,9 @@ Loading.decorators = [
         commitesData: {
             loading: true,
         },
+        reposData: {
+            reposName: 'Reposity №1',
+        },
     }),
 ]
 
@@ -48,6 +54,9 @@ Error.decorators = [
     StoreDecorator({
         commitesData: {
             error: 'Коммиты не найдены. Репозиторий пуст.',
+        },
+        reposData: {
+            reposName: 'Reposity №1',
         },
     }),
 ]

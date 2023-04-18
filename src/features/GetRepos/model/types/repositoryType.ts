@@ -8,6 +8,7 @@ export type RepositoryType = {
 
 export type RepositoriesType = {
     repositories: RepositoryType[]
+    reposName: string
     loading: boolean
     error: string
 }
