@@ -38,18 +38,8 @@ const repositories: RepositoryType[] = [
 
 const Template: StoryFn<typeof ReposPage> = () => <ReposPage />
 
-export const WithEmpryValues = Template.bind({})
-WithEmpryValues.decorators = [
-    StoreDecorator({
-        userData: {
-            login: '',
-            searchValue: '',
-        },
-    }),
-]
-
-export const WithValues = Template.bind({})
-WithValues.decorators = [
+export const Normal = Template.bind({})
+Normal.decorators = [
     StoreDecorator({
         userData: {
             login: 'QbicR',
@@ -62,8 +52,8 @@ WithValues.decorators = [
     }),
 ]
 
-export const WithRepositoriesLoading = Template.bind({})
-WithRepositoriesLoading.decorators = [
+export const Loading = Template.bind({})
+Loading.decorators = [
     StoreDecorator({
         userData: {
             login: 'QbicR',
@@ -76,14 +66,24 @@ WithRepositoriesLoading.decorators = [
     }),
 ]
 
-export const WithRepositoriesError = Template.bind({})
-WithRepositoriesError.decorators = [
+export const Error = Template.bind({})
+Error.decorators = [
     StoreDecorator({
         userData: {
             login: 'QbicR',
             searchValue: 'QbicR',
             avatar_url: avatar,
             error: 'Пользователь не найден. Проверьте правильность введенных данных.',
+        },
+    }),
+]
+
+export const WithEmpryLoginAndSearchValues = Template.bind({})
+WithEmpryLoginAndSearchValues.decorators = [
+    StoreDecorator({
+        userData: {
+            login: '',
+            searchValue: '',
         },
     }),
 ]

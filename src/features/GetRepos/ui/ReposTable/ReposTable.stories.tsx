@@ -37,16 +37,9 @@ const repositories: RepositoryType[] = [
 
 const Template: StoryFn<typeof ReposTable> = (args) => <ReposTable {...args} />
 
-export const WithValues = Template.bind({})
-WithValues.args = {
+export const Normal = Template.bind({})
+Normal.args = {
     login: 'QbicR',
     repositories: repositories,
 }
-WithValues.decorators = [StoreDecorator({ commitesData: { commites: [] } })]
-
-export const WithEmpryValues = Template.bind({})
-WithEmpryValues.args = {
-    login: 'QbicR',
-    repositories: [],
-}
-WithEmpryValues.decorators = [StoreDecorator({ commitesData: { commites: [] } })]
+Normal.decorators = [StoreDecorator({ commitesData: { commites: [] } })]

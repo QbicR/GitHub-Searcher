@@ -24,12 +24,7 @@ const commites: CommitType[] = [
 
 const Template: StoryFn<typeof CommitsTable> = (args) => <CommitsTable {...args} />
 
-export const WithValues = Template.bind({})
-WithValues.args = {
+export const Normal = Template.bind({})
+Normal.args = {
     commites: commites,
-}
-
-export const WithEmpryValues = Template.bind({})
-WithEmpryValues.args = {
-    commites: [],
 }
