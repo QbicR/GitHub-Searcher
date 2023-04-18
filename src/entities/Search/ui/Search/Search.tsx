@@ -54,6 +54,7 @@ export const Search = () => {
                     </svg>
                 </div>
                 <input
+                    spellCheck="false"
                     onChange={(e) => changeSearchValue(e.target.value)}
                     value={searchValue}
                     type="text"
