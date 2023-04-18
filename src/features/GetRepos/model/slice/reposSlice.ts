@@ -4,7 +4,7 @@ import { RepositoriesType } from '../types/repositoryType'
 import { getReposData } from '../services/getReposData'
 
 const initialState: RepositoriesType = {
-    repositoties: [],
+    repositories: [],
     loading: false,
     error: '',
 }
@@ -17,17 +17,17 @@ export const reposSlice = createSlice({
         builder.addCase(getReposData.pending, (state) => {
             state.loading = true
             state.error = ''
-            state.repositoties = []
+            state.repositories = []
         })
         builder.addCase(getReposData.fulfilled, (state, action: any) => {
             state.loading = false
             state.error = ''
-            state.repositoties = [...action.payload]
+            state.repositories = [...action.payload]
         })
         builder.addCase(getReposData.rejected, (state, action: any) => {
             state.loading = false
             state.error = action.payload
-            state.repositoties = []
+            state.repositories = []
         })
     },
 })

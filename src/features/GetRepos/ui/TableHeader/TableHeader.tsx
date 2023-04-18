@@ -12,7 +12,7 @@ export const TableHeader = memo(() => {
         <thead className="text-xs uppercase tracking-wider bg-gray-700 text-gray-400">
             <tr>
                 {tableHeader.map((header) => (
-                    <th key={header.id} scope="col" className="px-6 py-5 w-1/4">
+                    <th key={header.id} scope="col" className="px-6 py-5">
                         {header.name}
                     </th>
                 ))}

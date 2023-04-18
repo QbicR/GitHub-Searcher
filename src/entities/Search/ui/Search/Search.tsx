@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -13,20 +14,29 @@ export const Search = () => {
     const navigate = useNavigate()
     const { searchValue } = useSelector(getUserState)
 
-    const search = () => {
+    const changeSearchValue = (value: string) => {
+        dispatch(userAction.setSearchValue(value))
+    }
+
+    const search = useCallback(() => {
         if (searchValue.trim() !== '') {
             dispatch(getUserInfo({ login: searchValue }))
             dispatch(getReposData({ login: searchValue }))
             navigate(`../${searchValue}${RoutePath.repos}`, { replace: true })
         }
-    }
+    }, [dispatch, navigate, searchValue])
 
-    const changeSearchValue = (value: string) => {
-        dispatch(userAction.setSearchValue(value))
-    }
+    const handleKeyUp = useCallback(
+        (e: React.KeyboardEvent<HTMLDivElement>) => {
+            if (e.key === 'Enter') {
+                search()
+            }
+        },
+        [search],
+    )
 
     return (
-        <div className="flex items-center w-full max-w-6xl">
+        <div className="flex items-center w-full max-w-6xl" onKeyUp={handleKeyUp} tabIndex={0}>
             <div className="relative w-full">
                 <div className="absolute inset-y-0 left-1 flex items-center pl-3 pointer-events-none">
                     <svg
@@ -49,6 +59,7 @@ export const Search = () => {
                     type="text"
                     className="text-lg rounded-lg w-full pl-16 p-3 border-2 bg-gray-700 border-gray-600 placeholder-gray-400 text-gray-300 focus:border-blue-600"
                     placeholder="Найти GitHub пользователя..."
+                    autoFocus={true}
                 />
             </div>
             <button

@@ -8,32 +8,31 @@ import { CommitsWidget } from 'widgets/CommitsWidget'
 
 const CommitsPage = () => {
     const userData = useSelector(getUserState)
-    const { searchValue } = userData
+    const { searchValue, login } = userData
     const navigate = useNavigate()
 
+    const isEmpty = searchValue.length === 0 && login.length === 0
+
     useEffect(() => {
-        if (searchValue.length === 0) {
+        if (isEmpty) {
             navigate(RoutePath.main, { replace: true })
         }
-    })
+    }, [])
 
-    let content
-    if (searchValue.length === 0) {
-        content = (
+    if (isEmpty) {
+        return (
             <div className="flex flex-col gap-y-10 items-center justify-center bg-slate-800 p-6 w-full h-screen ring-slate-900/5 shadow-xl">
                 <Loader />
             </div>
         )
     } else {
-        content = (
+        return (
             <div className="flex flex-col gap-y-10 items-center justify-center bg-slate-800 p-6 w-full h-screen ring-slate-900/5 shadow-xl">
                 <Search />
                 <CommitsWidget />
             </div>
         )
     }
-
-    return <>{content}</>
 }
 
 export default CommitsPage
