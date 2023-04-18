@@ -10,6 +10,7 @@
 - Redux Toolkit
 - TailwindCSS
 - Storybook
+- RTL
 - FSD
 
 Запуск приложения на локальной машине:
