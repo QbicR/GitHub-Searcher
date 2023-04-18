@@ -1,6 +1,6 @@
+import { reposReducer } from './reposSlice'
 import { getReposData } from '../services/getReposData'
 import { RepositoriesType } from '../types/repositoryType'
-import { reposReducer } from './reposSlice'
 
 const data: RepositoriesType = {
     repositories: [

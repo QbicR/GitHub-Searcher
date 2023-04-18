@@ -1,7 +1,8 @@
-import { Search, getUserState } from 'entities/Search'
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+
+import { Search, getUserState } from 'entities/Search'
 import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { CommitsWidget } from 'widgets/CommitsWidget'

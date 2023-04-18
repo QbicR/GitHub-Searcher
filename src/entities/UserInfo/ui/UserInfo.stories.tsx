@@ -1,4 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react'
+
 import { UserInfo } from './UserInfo'
 import avatar from 'shared/assets/tests/storybook/avatar.jpg'
 

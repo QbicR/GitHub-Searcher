@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider'
 import { getUserState } from './getUserState'
+import { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getUserState.test', () => {
     test('should return userData state', () => {

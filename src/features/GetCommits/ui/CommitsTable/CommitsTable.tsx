@@ -1,6 +1,6 @@
 import { TableHeader } from '../TableHeader/TableHeader'
 import { TableBody } from '../TableBody/TableBody'
-import { CommitType } from 'features/GetCommits/model/types/commitType'
+import { CommitType } from '../../model/types/commitType'
 
 interface Props {
     commites: CommitType[]

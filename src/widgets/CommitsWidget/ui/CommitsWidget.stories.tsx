@@ -1,8 +1,8 @@
 import { StoryFn, Meta } from '@storybook/react'
 
+import { CommitsWidget } from './CommitsWidget'
 import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
-import { CommitsWidget } from './CommitsWidget'
 import { CommitType } from 'features/GetCommits/model/types/commitType'
 
 export default {

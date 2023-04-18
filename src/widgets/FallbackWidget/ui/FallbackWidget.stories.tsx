@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react'
 
-import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { FallbackWidget } from './FallbackWidget'
+import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 
 export default {
     title: 'widgets/FallbackWidget',

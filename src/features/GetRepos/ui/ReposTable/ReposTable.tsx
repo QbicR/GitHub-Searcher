@@ -1,6 +1,6 @@
+import { RepositoryType } from '../../model/types/repositoryType'
 import { TableHeader } from '../TableHeader/TableHeader'
 import { TableBody } from '../TableBody/TableBody'
-import { RepositoryType } from 'features/GetRepos/model/types/repositoryType'
 
 interface Props {
     repositories: RepositoryType[]

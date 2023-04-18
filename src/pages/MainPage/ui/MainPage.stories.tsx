@@ -1,4 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react'
+
 import MainPage from './MainPage'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'

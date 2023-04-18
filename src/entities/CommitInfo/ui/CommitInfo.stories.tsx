@@ -1,4 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react'
+
 import { CommitInfo } from './CommitInfo'
 import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 

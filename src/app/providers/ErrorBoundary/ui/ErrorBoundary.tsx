@@ -1,4 +1,5 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react'
+
 import { ErrorWidget } from 'widgets/ErrorWidget'
 import { FallbackWidget } from 'widgets/FallbackWidget'
 

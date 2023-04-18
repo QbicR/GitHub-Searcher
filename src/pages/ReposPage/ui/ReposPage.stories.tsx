@@ -1,8 +1,8 @@
 import { StoryFn, Meta } from '@storybook/react'
 
+import ReposPage from './ReposPage'
 import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
-import ReposPage from './ReposPage'
 import { RepositoryType } from 'features/GetRepos/model/types/repositoryType'
 import avatar from 'shared/assets/tests/storybook/avatar.jpg'
 

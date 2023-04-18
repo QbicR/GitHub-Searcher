@@ -1,8 +1,8 @@
 import { StoryFn, Meta } from '@storybook/react'
 
-import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
-import { RepositoryType } from 'features/GetRepos/model/types/repositoryType'
 import { ReposTable } from './ReposTable'
+import { RepositoryType } from '../../model/types/repositoryType'
+import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 export default {

@@ -2,9 +2,9 @@ import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { RepositoryType } from '../../model/types/repositoryType'
-import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { getCommitesData } from 'features/GetCommits'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { RoutePath } from 'shared/config/RouterConfig/RouterConfig'
 
 interface Props {
     repositories: RepositoryType[]

@@ -1,9 +1,9 @@
 import { StoryFn, Meta } from '@storybook/react'
 
-import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 import CommitsPage from './CommitsPage'
 import { CommitType } from 'features/GetCommits/model/types/commitType'
+import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 
 export default {
     title: 'pages/CommitsPage',

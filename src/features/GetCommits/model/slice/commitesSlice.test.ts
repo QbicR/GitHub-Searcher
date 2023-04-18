@@ -1,6 +1,6 @@
+import { commitesReducer } from './commitesSlice'
 import { getCommitesData } from '../services/getCommitesData'
 import { CommitesType } from '../types/commitType'
-import { commitesReducer } from './commitesSlice'
 
 const data: CommitesType = {
     commites: [

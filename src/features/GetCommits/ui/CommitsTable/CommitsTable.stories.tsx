@@ -1,8 +1,8 @@
 import { StoryFn, Meta } from '@storybook/react'
 
-import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { CommitsTable } from './CommitsTable'
-import { CommitType } from 'features/GetCommits/model/types/commitType'
+import { CommitType } from '../../model/types/commitType'
+import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 
 export default {
     title: 'features/CommitsTable',

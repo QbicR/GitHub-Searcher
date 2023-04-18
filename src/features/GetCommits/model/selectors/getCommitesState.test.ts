@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider'
 import { getCommitesState } from './getCommitesState'
 import { CommitType } from '../types/commitType'
+import { StateSchema } from 'app/providers/StoreProvider'
 
 const commites: CommitType[] = [
     { sha: '1234', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },

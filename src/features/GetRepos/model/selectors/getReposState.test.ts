@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider'
 import { getReposState } from './getReposState'
 import { RepositoryType } from '../types/repositoryType'
+import { StateSchema } from 'app/providers/StoreProvider'
 
 const repositories: RepositoryType[] = [
     { id: 1234, name: '1234', language: 'TS', description: 'rep 1', stargazers_count: 10 },

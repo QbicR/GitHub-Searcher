@@ -1,5 +1,5 @@
-import { UserType } from '../types/userTypes'
 import { userAction, userReducer } from './userSlice'
+import { UserType } from '../types/userTypes'
 import { getUserInfo } from '../services/getUserInfo'
 
 const data: UserType = {

@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react'
 
-import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { ErrorWidget } from './ErrorWidget'
+import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 
 export default {
     title: 'widgets/ErrorWidget',
