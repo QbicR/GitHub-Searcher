@@ -21,4 +21,4 @@
 Запуск Storybook'а:
 
 -   npm run storybook,
--   после чего перейти по адресу: http://localhost:6006/
+-   после запуска перейти по адресу: http://localhost:6006/
