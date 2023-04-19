@@ -24,7 +24,7 @@ export const ReposWidget = memo(() => {
                 <div className="text-3xl text-center font-medium text-gray-200">{error}</div>
             </div>
         )
-    } else if (repositories) {
+    } else if (repositories && !error) {
         return (
             <div className="flex items-center justify-start flex-col w-full max-w-6xl h-4/5 p-8 gap-8  border rounded-lg shadow bg-gray-800 border-gray-700">
                 <UserInfo login={login} avatar={avatar} />

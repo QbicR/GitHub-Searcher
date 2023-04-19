@@ -9,10 +9,10 @@ import { CommitsWidget } from 'widgets/CommitsWidget'
 
 const CommitsPage = () => {
     const userData = useSelector(getUserState)
-    const { searchValue, login } = userData
+    const { searchValue, login, error } = userData
     const navigate = useNavigate()
 
-    const isEmpty = searchValue.length === 0 && login.length === 0
+    const isEmpty = searchValue.length === 0 && login.length === 0 && !error
 
     useEffect(() => {
         if (isEmpty) {
