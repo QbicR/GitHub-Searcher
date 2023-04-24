@@ -1,12 +1,12 @@
-import { memo } from 'react'
+import React from 'react'
 
-const tableHeader = [
-    { id: 1, name: 'Автор коммита' },
-    { id: 2, name: 'Хеш коммита' },
-    { id: 3, name: 'Дата коммита' },
-]
+interface Props {
+    tableHeader: { id: number; name: string }[]
+}
 
-export const TableHeader = memo(() => {
+export const TableHeader: React.FC<Props> = (props) => {
+    const { tableHeader } = props
+
     return (
         <thead className="text-xs uppercase bg-gray-700 text-gray-400">
             <tr>
@@ -18,4 +18,4 @@ export const TableHeader = memo(() => {
             </tr>
         </thead>
     )
-})
+}

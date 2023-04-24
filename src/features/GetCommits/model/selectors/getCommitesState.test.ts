@@ -1,15 +1,6 @@
 import { getCommitesState } from './getCommitesState'
-import { CommitType } from '../types/commitType'
 import { StateSchema } from 'app/providers/StoreProvider'
-
-const commites: CommitType[] = [
-    { sha: '1234', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
-    { sha: '12345', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
-    { sha: '123456', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
-    { sha: '1234567', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
-    { sha: '12345678', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
-    { sha: '123456789', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
-]
+import { commites } from 'shared/const/mockDataForTests'
 
 describe('getCommitesState.test', () => {
     test('should return commitesData state', () => {
