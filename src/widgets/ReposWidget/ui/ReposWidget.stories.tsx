@@ -30,6 +30,20 @@ Normal.decorators = [
     }),
 ]
 
+export const WithEmptyRepos = Template.bind({})
+WithEmptyRepos.decorators = [
+    StoreDecorator({
+        userData: {
+            login: 'QbicR',
+            searchValue: 'QbicR',
+            avatar_url: avatar,
+        },
+        reposData: {
+            repositories: [],
+        },
+    }),
+]
+
 export const Loading = Template.bind({})
 Loading.decorators = [
     StoreDecorator({

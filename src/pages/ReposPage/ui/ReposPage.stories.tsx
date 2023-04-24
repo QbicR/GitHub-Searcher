@@ -31,6 +31,20 @@ Normal.decorators = [
     }),
 ]
 
+export const WithEmptyRepos = Template.bind({})
+WithEmptyRepos.decorators = [
+    StoreDecorator({
+        userData: {
+            login: 'QbicR',
+            searchValue: 'QbicR',
+            avatar_url: avatar,
+        },
+        reposData: {
+            repositories: [],
+        },
+    }),
+]
+
 export const Loading = Template.bind({})
 Loading.decorators = [
     StoreDecorator({
@@ -57,8 +71,8 @@ Error.decorators = [
     }),
 ]
 
-export const WithEmpryLoginAndSearchValues = Template.bind({})
-WithEmpryLoginAndSearchValues.decorators = [
+export const WithEmptyLoginAndSearchValues = Template.bind({})
+WithEmptyLoginAndSearchValues.decorators = [
     StoreDecorator({
         userData: {
             login: '',

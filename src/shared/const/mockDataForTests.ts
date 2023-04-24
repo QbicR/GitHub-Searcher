@@ -30,3 +30,16 @@ export const commites: CommitType[] = [
     { sha: '12345678', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
     { sha: '123456789', commit: { author: { name: 'Qbic', date: '2023-04-18' } } },
 ]
+
+export const commitesTableHeader = [
+    { id: 1, name: 'Автор коммита' },
+    { id: 2, name: 'Хеш коммита' },
+    { id: 3, name: 'Дата коммита' },
+]
+
+export const reposTableHeader = [
+    { id: 1, name: 'Наименование' },
+    { id: 2, name: 'Язык программирования' },
+    { id: 3, name: 'Описание' },
+    { id: 4, name: 'Количество звезд' },
+]
