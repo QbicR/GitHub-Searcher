@@ -9,6 +9,7 @@ import {
 } from 'features/GetCommits'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { getReposStateReposName } from 'features/GetRepos'
+import { TextUI } from 'shared/ui/Text/TextUI'
 
 export const CommitsWidget = () => {
   const commites = useSelector(getCommitesStateData)
@@ -27,7 +28,7 @@ export const CommitsWidget = () => {
     return (
       <div className="flex items-center justify-start flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
         <CommitInfo reposName={reposName} />
-        <div className="text-3xl text-center font-medium text-gray-200">{error}</div>
+        <TextUI text={error} />
       </div>
     )
   } else {
