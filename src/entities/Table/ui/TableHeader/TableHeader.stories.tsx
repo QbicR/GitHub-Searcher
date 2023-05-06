@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react'
 
-import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { TableHeader } from './TableHeader'
+import { RouterDecorator } from 'shared/config/storybook/RouteDecorator/RouteDecorator'
 import { commitesTableHeader, reposTableHeader } from 'shared/const/mockDataForTests'
 
 export default {
