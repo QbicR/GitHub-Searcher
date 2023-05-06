@@ -8,13 +8,13 @@ import {
   getCommitesStateLoading,
 } from 'features/GetCommits'
 import { Loader } from 'shared/ui/Loader/Loader'
-import { getReposState } from 'features/GetRepos'
+import { getReposStateReposName } from 'features/GetRepos'
 
-export const CommitsWidget = () => {
-  const { reposName } = useSelector(getReposState)
+export const CommitsWidget = () => 
   const commites = useSelector(getCommitesStateData)
   const loading = useSelector(getCommitesStateLoading)
   const error = useSelector(getCommitesStateError)
+  const reposName = useSelector(getReposStateReposName
 
   if (loading) {
     return (
