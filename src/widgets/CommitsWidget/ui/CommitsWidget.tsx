@@ -10,6 +10,7 @@ import {
 import { Loader } from 'shared/ui/Loader/Loader'
 import { getReposStateReposName } from 'features/GetRepos'
 import { TextUI } from 'shared/ui/Text/TextUI'
+import { Wrapper } from 'shared/ui/Wrapper/Wrapper'
 
 export const CommitsWidget = () => {
   const commites = useSelector(getCommitesStateData)
@@ -19,24 +20,24 @@ export const CommitsWidget = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-start flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
+      <Wrapper>
         <CommitInfo reposName={reposName} />
         <Loader />
-      </div>
+      </Wrapper>
     )
   } else if (error) {
     return (
-      <div className="flex items-center justify-start flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
+      <Wrapper>
         <CommitInfo reposName={reposName} />
         <TextUI text={error} />
-      </div>
+      </Wrapper>
     )
   } else {
     return (
-      <div className="flex items-center justify-start flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
+      <Wrapper>
         <CommitInfo reposName={reposName} />
         <CommitsTable commites={commites} />
-      </div>
+      </Wrapper>
     )
   }
 }
