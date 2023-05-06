@@ -10,6 +10,7 @@ import {
   getReposStateLoading,
 } from 'features/GetRepos'
 import { Loader } from 'shared/ui/Loader/Loader'
+import { TextUI } from 'shared/ui/Text/TextUI'
 
 export const ReposWidget = memo(() => {
   const userData = useSelector(getUserState)
@@ -29,7 +30,7 @@ export const ReposWidget = memo(() => {
   if (userError) {
     return (
       <div className="flex items-center justify-center flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
-        <div className="text-3xl text-center font-medium text-gray-200">{userError}</div>
+        <TextUI text={userError} />
       </div>
     )
   }
@@ -37,7 +38,7 @@ export const ReposWidget = memo(() => {
   if (reposError) {
     return (
       <div className="flex items-center justify-center flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
-        <div className="text-3xl text-center font-medium text-gray-200">{reposError}</div>
+        <TextUI text={reposError} />
       </div>
     )
   }
@@ -46,9 +47,7 @@ export const ReposWidget = memo(() => {
     <div className="flex items-center justify-start flex-col w-full max-w-6xl h-4/5 p-8 gap-8 border rounded-lg shadow bg-gray-800 border-gray-700">
       <UserInfo login={login} avatar={avatar} />
       {reposData.length === 0 ? (
-        <div className="text-3xl text-center font-medium text-gray-200">
-          У пользователя отсутствуют репозитории.
-        </div>
+        <TextUI text={'У пользователя отсутствуют репозитории.'} />
       ) : (
         <ReposTable login={login} repositories={reposData} />
       )}
