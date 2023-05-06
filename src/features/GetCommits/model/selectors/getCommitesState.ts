@@ -1,3 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider'
 
-export const getCommitesState = (state: StateSchema) => state.commitesData
+export const getCommitesStateData = (state: StateSchema) => state.commitesData.commites
+export const getCommitesStateError = (state: StateSchema) => state.commitesData.error
+export const getCommitesStateLoading = (state: StateSchema) => state.commitesData.loading

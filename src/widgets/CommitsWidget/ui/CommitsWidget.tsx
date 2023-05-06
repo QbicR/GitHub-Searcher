@@ -1,13 +1,20 @@
 import { useSelector } from 'react-redux'
 
 import { CommitInfo } from 'entities/CommitInfo'
-import { CommitsTable, getCommitesState } from 'features/GetCommits'
+import {
+  CommitsTable,
+  getCommitesStateData,
+  getCommitesStateError,
+  getCommitesStateLoading,
+} from 'features/GetCommits'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { getReposStateReposName } from 'features/GetRepos'
 
-export const CommitsWidget = () => {
-  const reposName = useSelector(getReposStateReposName)
-  const { commites, loading, error } = useSelector(getCommitesState)
+export const CommitsWidget = () => 
+  const commites = useSelector(getCommitesStateData)
+  const loading = useSelector(getCommitesStateLoading)
+  const error = useSelector(getCommitesStateError)
+  const reposName = useSelector(getReposStateReposName
 
   if (loading) {
     return (
